@@ -17,7 +17,7 @@ class BertCRFTagger(nn.Module):
     def __init__(self, bert, hidden_size, num_tags, dropout):
         super().__init__()
         self.bert = bert
-        self.crf = CRF(num_tags, batch_first=True)
+        self.crf = CRF(num_tags)
         self.fc = nn.Linear(hidden_size, num_tags)
         self.dropout = nn.Dropout(dropout)
 
