@@ -31,5 +31,5 @@ class BertCRFTagger(nn.Module):
             loss = -self.crf(torch.log_softmax(emission, dim=2), tags, mask=mask, reduction='mean')
             return loss
         else:
-            prediction = self.crf.decode(emission, mask=mask)
+            prediction = self.crf.viterbi_decode(emission, mask=mask)
             return prediction
