@@ -28,8 +28,8 @@ class BertCRFTagger(nn.Module):
         emission = self.fc(last_hidden_state)
 
         if tags is not None:
-            loss = -self.crf(torch.log_softmax(emission, dim=2), tags, mask=mask, reduction='mean')
-            return loss
+            loss = -self.crf(torch.log_softmax(emission, dim=2), tags, mask=mask)
+            return loss.mean()
         else:
             prediction = self.crf.decode(emission, mask=mask)
             return prediction
