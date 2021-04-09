@@ -23,7 +23,7 @@ class args:
         self.seq_token = '[SEP]'
         self.cls_token = '[CLS]'
 
-        self.batch_size = 2
+        self.batch_size = 4
         self.shuffle = True
         self.drop_last = False
         self.max_length = 128
