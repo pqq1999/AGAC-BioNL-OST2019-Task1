@@ -16,7 +16,8 @@ class args:
 
         self.seed = 126
         self.load_labeled_data = True
-        self.model_name = 'dmis-lab/biobert-base-cased-v1.1'
+        #self.model_name = 'dmis-lab/biobert-base-cased-v1.1'
+        self.model_name = '/home/pqq/pqq/PyProject/Entity_linking_HPO/model/biobert-base-cased'
         self.do_lower_case = False
 
         self.unk_token = '[UNK]'
